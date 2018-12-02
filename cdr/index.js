@@ -11,7 +11,7 @@ module.exports = class CfeCdrPlugin extends CdrPlugin {
 
   getContent() {
     var result = {
-      shortDescription: 'LGC',
+      shortDescription: 'Landing Gear Control',
       longDescription: 'Landing Gear Control.',
       nodes: {
         main: {
