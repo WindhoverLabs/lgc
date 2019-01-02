@@ -9,12 +9,17 @@ add_airliner_app_def(lgc
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/lgc_msg.h
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/lgc_tbldefs.h
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/lgc_version.h
-   
+
     INCLUDES
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/
 
     USER_DOCS   ${CMAKE_CURRENT_SOURCE_DIR}/user_doxy.in
     DESIGN_DOCS ${CMAKE_CURRENT_SOURCE_DIR}/detail_doxy.in
+
+    MSG_OVERRIDES ${CMAKE_CURRENT_SOURCE_DIR}/lgc_msg_overrides.json
+
+    COMMANDER_PLUGIN
+        ${CMAKE_CURRENT_SOURCE_DIR}/../../cdr
 )
 
 add_airliner_app_unit_test(lgc-ut
@@ -40,12 +45,12 @@ add_airliner_app_unit_test(lgc-ut
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/lgc_msg.h
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/lgc_tbldefs.h
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/lgc_version.h
-        
+
     INCLUDES
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/
         ${CMAKE_CURRENT_SOURCE_DIR}/../unit_test/
         ${CMAKE_CURRENT_SOURCE_DIR}/../unit_test/stubs/
-        
+
     VALGRIND_SUPPRESSION_FILE
         ${CMAKE_CURRENT_SOURCE_DIR}/../unit_test/valgrind.supp
 )
