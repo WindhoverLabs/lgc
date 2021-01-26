@@ -1,5 +1,5 @@
 
-add_airliner_app_def(lgc
+buildliner_add_app_def(lgc
     FILE LGC
     SOURCES
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/lgc_app.cpp
@@ -20,7 +20,7 @@ add_airliner_app_def(lgc
         ${PROJECT_SOURCE_DIR}/apps/lgc/fsw/platform_inc
 )
 
-add_airliner_app_unit_test(lgc-ut
+buildliner_add_app_unit_test(lgc-ut
     UTASSERT
     NO_HELGRIND
     NO_MASSIF
